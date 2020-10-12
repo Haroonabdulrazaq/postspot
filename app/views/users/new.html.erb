@@ -1,6 +1,2 @@
 <h1>Create new user</h1>
-<%= form_with model: @user do |f|%>
-    <%= f.label :name, 'Name' %>
-    <%= f.text_field :name %> <br/><br/>
-    <%= f.submit 'Create User' %>
-<%end%>
+<%= render './shared/signform' %>
