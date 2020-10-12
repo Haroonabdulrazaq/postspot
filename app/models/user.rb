@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :Articles 
+    has_many :Articles
 end
