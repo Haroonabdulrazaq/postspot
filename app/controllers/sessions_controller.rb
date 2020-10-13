@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
       if @user
         session[:user_id] = @user.id 
-        flash[:success] = 'Logged In Sucessfully'
+        flash[:success] = "#{@user.name} Logged In Sucessfully" 
         redirect_to users_path
       else
         flash.now[:alert] = 'User does not exist, Sign up Please!!!'

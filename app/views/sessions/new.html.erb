@@ -1,2 +1,6 @@
 <h1>Sign In</h1>
-<%= render './shared/signform' %>
+<%= form_for(:session, url: login_path, method: 'post') do |f|%>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %> <br/><br/>
+    <%= f.submit 'Login' %>
+<%end%>
