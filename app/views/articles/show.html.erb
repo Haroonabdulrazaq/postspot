@@ -1,0 +1,9 @@
+<h1>Show Article</h1>
+<div>
+    <p>
+     <span>Created by: </span><%= @article.creator.name %><br/><br/>
+        <%= @article.title %><br/><br/>    
+         <%= @article.text %>
+    </p>
+    <%= link_to 'Upvote', votes_article_path %>
+</div>

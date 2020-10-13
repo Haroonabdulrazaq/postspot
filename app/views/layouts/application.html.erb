@@ -10,9 +10,12 @@
   </head>
 
   <body>
-   <% flash.each do |name, message|  %>
-     <%= message %>
-   <% end %>
+    <% if session[:user_id].present?%>
+      <%= logged_in_user %>
+    <%end%>
+    <% flash.each do |name, message|  %>
+      <%= message %>
+    <% end %>
 
     <%= yield %>
   </body>

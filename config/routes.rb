@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root 'users#new'
   resources :users
   resources :sessions
-  resources :articles
-  
+  resources :articles do
+    member do
+      get 'votes'
+    end
+  end
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 end
