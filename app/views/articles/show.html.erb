@@ -2,8 +2,13 @@
 <div>
     <p>
      <span>Created by: </span><%= @article.creator.name %><br/><br/>
+     <span>Upvotes: </span>  <% vote_count.each do |key, value|%>
+          <%= value %>
+       <%end%><br/><br/>
         <%= @article.title %><br/><br/>    
          <%= @article.text %>
     </p>
-    <%= link_to 'Upvote', votes_article_path %>
+
+   <%= voted_user %>
+  
 </div>

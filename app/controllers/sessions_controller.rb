@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
       if @user
         session[:user_id] = @user.id 
-        flash[:success] = "#{@user.name} Logged In Sucessfully" 
+        flash[:success] = "Signed In Sucessfully" 
         redirect_to users_path
       else
         flash.now[:alert] = 'User does not exist, Sign up Please!!!'
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
     def destroy
       @session[user_id] = nil
-      flash.now[:alert] = 'Logged Out Sucessfully'
+      flash.now[:alert] = 'Signed Out Sucessfully'
       redirect_to user_path
     end
 end

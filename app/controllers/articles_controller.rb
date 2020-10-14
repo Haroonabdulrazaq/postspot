@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
         redirect_to articles_path
       else
         flash.now[:alert] = 'Can not upvote this article'
-        render :new
+        render :show
       end
     end
 end

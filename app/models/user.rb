@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    has_many :Articles
-    has_many :Votes
+    has_many :articles
+    has_many :votes
 end
