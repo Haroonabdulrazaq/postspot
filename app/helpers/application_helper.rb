@@ -15,10 +15,7 @@ module ApplicationHelper
       end
     end
 
-    def vote_count
-      @popular = @article.votes.group(:article_id).count
-      @popular = @popular.each do |key, value|
-        return value
-      end
-    end
+    # def vote_count
+    #   @article.votes.group(:article_id).count
+    # end
 end

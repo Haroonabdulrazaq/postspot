@@ -1,12 +1,11 @@
 <h1>Show Article</h1>
 <div>
     <p>
+    <%= @article.votes.count%>
      <span>Created by: </span><%= @article.creator.name %><br/><br/>
-     <span>Upvotes: </span>  <% vote_count.each do |key, value|%>
-          <%= value %>
-       <%end%><br/><br/>
-        <%= @article.title %><br/><br/>    
-         <%= @article.text %>
+        <%= @article.title %><br/><br/>
+        <%= image_tag(@article.image) %><br/><br/>
+        <%= @article.text %>
     </p>
 
    <%= voted_user %>
