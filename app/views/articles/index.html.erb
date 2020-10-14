@@ -3,6 +3,7 @@
 <% popular = Vote.popular %>
 <% popular.each do |vote| %>
 <div class="card-img-overlay texts">
+    <%= image_tag(vote.article.image) %>
 <h5 class="card-title font-weight-bold "><%= vote.article.title %></h5>
 <p class="card-text text-truncate"><%= vote.article.text %></p>
 <p class="card-text "><small class="text-muted"><%= link_to 'Read more', article_path(vote.article), class: 'readmore' %></small></p>
