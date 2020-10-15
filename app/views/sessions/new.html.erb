@@ -1,5 +1,5 @@
 <h1>Sign In</h1>
-<%= form_for(:session, url: login_path, method: 'post') do |f|%>
+<%= form_for(:session, url: signin_path, method: 'post') do |f|%>
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name %> <br/><br/>
     <%= f.submit 'Login' %>

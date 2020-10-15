@@ -1,0 +1,18 @@
+<%= form_with(model: @article, local: true ) do |f|%>
+
+<%= f.text_field :title, placeholder:'Title' %><br/><br/>
+<%= f.text_area :text, placeholder:'Text' %><br/><br/>
+<%= f.label :category, 'Category' %>
+            <%= f.select(:category ) do %>
+                <% [['Business', 1],
+                    ['Sport',2],
+                    ['Fashion',3],
+                    ['Entertainment', 4]].each do |c| %>
+                    <%= content_tag(:option, c.first, value: c.last) %> 
+                <% end %>
+                <% end %> <br/><br/>
+<%= f.file_field :image %><br/><br/>
+
+<%= f.submit%>
+
+<%end%>

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         flash[:notice] = 'Signed up sucessfully'
-        redirect_to users_path
+        redirect_to sigin_path
       else
         flash[:alert] = 'Can not sign up for some reasons'
         render :new

@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     end
 
     def article_params
-      params.require(:article).permit(:title, :image, :text)
+      params.require(:article).permit(:title, :image, :text, :category_id)
+    end
+
+    def category_params 
+      params.require(:category).permit(:name, :priority)
     end
 end

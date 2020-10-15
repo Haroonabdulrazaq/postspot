@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update]
     def index 
       @articles = Article.all
     end
@@ -20,7 +21,21 @@ class ArticlesController < ApplicationController
     end
 
     def show
-      @article = Article.find(params[:id])
+    end
+
+    def edit   
+    end
+
+    def update
+      respond_to do |format|
+        if @article.update(article_params)
+          format.html { redirect_to @article, notice: 'article was successfully updated.' }
+          format.json { render :show, status: :ok, location: @article }
+        else
+          format.html { render :edit }
+          format.json { render json: @article.errors, status: :unprocessable_entity }
+        end
+      end
     end
 
     def votes
@@ -33,5 +48,12 @@ class ArticlesController < ApplicationController
         flash.now[:alert] = 'Can not upvote this article'
         render :show
       end
+    end
+
+
+    private
+
+    def set_article
+      @article = Article.find(params[:id])
     end
 end
