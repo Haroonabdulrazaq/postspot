@@ -1,2 +1,2 @@
-module ArticleHelper 
+module ArticleHelper
 end
