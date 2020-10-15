@@ -11,5 +11,8 @@
 <% categories = Category.includes(:most_recent_article).all%>
 
 <% categories.each do |category|%>
-  <%= category.most_recent_article&.title %>
+<ul>
+<%= category.name %>
+ <li> <%= category.most_recent_article&.title %> </li>
+</ul>
 <%end%>
