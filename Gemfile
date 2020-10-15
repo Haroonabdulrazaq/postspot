@@ -11,6 +11,8 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 4.1'
 # View Tables better
 gem 'hirb', '~> 0.7.3'
+# A modern CSS framework based on Flexbox
+gem 'bulma-rails', '~> 0.9.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

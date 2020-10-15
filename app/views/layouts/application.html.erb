@@ -10,12 +10,51 @@
   </head>
 
   <body>
-    <% if session[:user_id].present?%>
-      <%= logged_in_user %>
-    <%end%>
-    <% flash.each do |name, message|  %>
-      <%= message %>
-    <% end %>
+
+  <% if flash[:alert]%>
+    <div class="notification is-danger global-notification ">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+
+  <nav class="navbar is-info">
+    <div class="navbar-brand">
+      <%= link_to root_path, class:"navbar-item" do %>
+      <h1 class="title is-4 has-text-white"> PostSpot </h1>
+      <% end %> 
+
+      <div class="navbar-burger burger" data-target="navbarExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id = "navbarExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="field is-grouped level">
+          <p class="control">
+            <%= link_to "All articles", articles_path, class:"button is-info is-inverted"%>
+          </p>
+          <% if logged_in_user %>
+          <p class="control">
+            <%= link_to 'Home', categories_path, class: "button is-info"%>
+          </p>
+          <p class="control">
+            <%= link_to logged_in_user, class:"button is-dark" %>
+          </p>
+          <% else %>
+           <p class="control">
+             <%= link_to "Sign In", signin_path ,class:"button is-info"%>
+           </p>  
+           <p class="control">
+             <%= link_to "Sign up", new_user_path ,class:"button is-info"%>
+           </p>  
+           <% end %>
+        </div>
+      </div>
+    </div>
+  </nav>
 
     <%= yield %>
   </body>

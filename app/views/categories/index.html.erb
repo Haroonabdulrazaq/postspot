@@ -1,21 +1,22 @@
-<% popular = Vote.popular %>
-<% popular.each do |vote| %>
-<div class="card-img-overlay texts">
-    <%= image_tag(vote.article.image) %>
-<h5 class="card-title font-weight-bold "><%= vote.article.title %></h5>
-<p class="card-text text-truncate"><%= vote.article.text %></p>
-<p class="card-text "><small class="text-muted"><%= link_to 'Read more', article_path(vote.article), class: 'readmore' %></small></p>
-</div>
-<% end %> 
-<h1>All categories</h1>
-<% categories = Category.includes(:most_recent_article).all%>
+  <% popular = Vote.popular %>
+    <% popular.each do |vote| %>
+    <div>
+    <%= image_tag(vote.article.image)%>
+    <h5 ><%= vote.article.title %></h5>
+    <p ><%= vote.article.text %></p>
+    <p ><small ><%= link_to 'Read more', article_path(vote.article)%></small></p>
+    </div>
+  <%end%>
+ 
+  <h1>All categories</h1>
+  <% categories = Category.includes(:most_recent_article).all%>
 
-<% categories.each do |category|%>
-<ul>
-<%= link_to category.name %>
- <li>
-  <%= category.most_recent_article&.title %><br/>
-  <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
-  </li>
-</ul>
-<% end %>
+  <% categories.each do |category|%>
+  <ul>
+  <%= link_to category.name %>
+  <li>
+    <%= category.most_recent_article&.title %><br/>
+    <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+    </li>
+  </ul>
+  <% end %>

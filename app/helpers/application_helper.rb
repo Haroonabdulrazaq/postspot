@@ -14,8 +14,4 @@ module ApplicationHelper
         link_to 'Upvote', votes_article_path
       end
     end
-
-    # def vote_count
-    #   @article.votes.group(:article_id).count
-    # end
 end
