@@ -12,7 +12,10 @@
 
 <% categories.each do |category|%>
 <ul>
-<%= category.name %>
- <li> <%= category.most_recent_article&.title %> </li>
+<%= link_to category.name %>
+ <li>
+  <%= category.most_recent_article&.title %><br/>
+  <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+  </li>
 </ul>
-<%end%>
+<% end %>

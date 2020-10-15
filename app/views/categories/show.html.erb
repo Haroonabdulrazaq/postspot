@@ -1,0 +1,11 @@
+<h1>Show category</h1>
+
+<% @category.articles.each do |article|%>
+<ul>
+  <li>
+    <%= article.title %><br/>
+    <%= article.text %><br/>
+    <%= image_tag(article.image) %>
+  </li>
+</ul>
+<% end %>
