@@ -56,7 +56,30 @@ nav {
   .navbar-start {
     a {
       text-transform: uppercase;
-      font-size: 0.8em;
+      font-size: 0.9em;
+      margin-left: 1.5em;
     }
+  }
+}
+
+.banner{
+  position: relative;
+  height: fit-content;
+  img{
+    width:1400px;
+    height: fit-content;
+  }
+  .banner-body{
+    position: absolute;
+    bottom: 0;
+     padding: 2em;
+     .banner-title{
+       color: $orange-red;
+       font-weight: bolder;
+       text-transform: capitalize;
+     }
+     .banner-text{
+       color: $white;
+     }
   }
 }

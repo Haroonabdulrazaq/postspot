@@ -1,14 +1,18 @@
   <% popular = Vote.popular %>
     <% popular.each do |vote| %>
-    <div>
-    <%= image_tag(vote.article.image)%>
-    <h5 ><%= vote.article.title %></h5>
-    <p ><%= vote.article.text %></p>
-    <p ><small ><%= link_to 'Read more', article_path(vote.article)%></small></p>
+    <div class="banner">
+      <div class="banner-img">
+        <%= image_tag(vote.article.image)%>
+      </div>
+      <div class="banner-body">
+        <h5 class="banner-title"><%= vote.article.title %></h5>
+        <p class="banner-text"><%= vote.article.text %>
+        <small ><%= link_to 'Read more', article_path(vote.article)%></small></p>
+      </div>
     </div>
   <%end%>
  
-  <h1>All categories</h1>
+  <h1>All categoriess</h1>
   <% categories = Category.includes(:most_recent_article).all%>
 
   <% categories.each do |category|%>
