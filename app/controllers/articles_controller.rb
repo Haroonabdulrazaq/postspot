@@ -1,9 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
   
+
   def index
-   @articles = Article.all
+    cat_id = params[:cat_id]
+  
+    @articles = if !cat_id.nil?
+                  Article.where(category_id: cat_id)
+                else
+                  Article.all.order('created_at DESC')
+                end
   end
+ 
 
   def new 
     @article = Article.new

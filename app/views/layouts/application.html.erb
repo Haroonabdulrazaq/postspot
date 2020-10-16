@@ -10,17 +10,22 @@
   </head>
 
   <body>
-
-  <% if flash[:alert]%>
+    <% if flash[:notice]%>
     <div class="notification is-danger global-notification ">
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
+  <% if flash[:alert]%>
+    <div class="notification is-primary global-notification ">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
 
-  <nav class="navbar is-info">
-    <div class="navbar-brand">
+
+  <nav class="navbar bg-white">
+    <div class="navbar-brand mr-6">
       <%= link_to root_path, class:"navbar-item" do %>
-      <h1 class="title is-4 has-text-white"> PostSpot </h1>
+        <h1 class="title is-4"> PostSpot <span class="midot orange-color">&#183;</span></h1>
       <% end %> 
 
       <div class="navbar-burger burger" data-target="navbarExample">
@@ -31,26 +36,37 @@
     </div>
 
     <div id = "navbarExample" class="navbar-menu">
-      <div class="navbar-end">
+      <div class="navbar-start ml-6">
         <div class="field is-grouped level">
           <p class="control">
-            <%= link_to "All articles", articles_path, class:"button is-info is-inverted"%>
+            <%= link_to 'Home', categories_path, class: ""%>
           </p>
-          <% if logged_in_user %>
+          <% Category.all.each do |category|%>
+            <p class="control">
+              <%= link_to category.name, articles_path(:cat_id => category.id), class: '' %>
+            </p>
+          <% end %>       
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="field is-grouped level">
+        
+          <p class="control">        
+            <%= link_to logged_in_user, edit_user_path(session[:user_id]) ,class:"is-dark" %>
+          </p>
+        <% if session[:user_id].present? %>
           <p class="control">
-            <%= link_to 'Home', categories_path, class: "button is-info"%>
+            <%= link_to "Sign Out", sessions_path, class:"button is-dark" %>
+          </p>
+        <% else%> 
+          <p class="control">
+            <%= link_to "Sign In", signin_path,  class:"button is-dark" %>
           </p>
           <p class="control">
-            <%= link_to logged_in_user, class:"button is-dark" %>
+            <%= link_to 'Sign Up', new_user_path, class: "button is-info"%>
           </p>
-          <% else %>
-           <p class="control">
-             <%= link_to "Sign In", signin_path ,class:"button is-info"%>
-           </p>  
-           <p class="control">
-             <%= link_to "Sign up", new_user_path ,class:"button is-info"%>
-           </p>  
-           <% end %>
+        <%end%>       
         </div>
       </div>
     </div>

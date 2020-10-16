@@ -16,9 +16,12 @@ class SessionsController < ApplicationController
       end
     end
 
+    # def destroy
+    #   session.clear
+    #   flash.now[:alert] = 'Signed Out Sucessfully'
+    #   redirect_to user_path
+    # end
     def destroy
-      session.clear
-      flash.now[:alert] = 'Signed Out Sucessfully'
-      redirect_to user_path
+      log_out
     end
 end
