@@ -11,15 +11,15 @@
       </div>
     </div>
   <%end%>
- 
-<div class="categories">
-  <% categories = Category.includes(:most_recent_article).all%>
-  <% categories.each do |category|%>
-  <div class="category">
-    <div class="category-body">
-      <h2 class="category-name ml-5"><%= link_to category.name %></h2>
-      <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+
+  <div class="categories">
+    <% categories = Category.includes(:most_recent_article).all%>
+    <% categories.each do |category|%>
+    <div class="category">
+      <div class="category-body">
+        <h2 class="category-name ml-5"><%= link_to category.name %></h2>
+        <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
-</div>

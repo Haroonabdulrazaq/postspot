@@ -60,7 +60,7 @@
             <%= link_to "New Article", new_article_path, class:"button has-text-white bg-coffee" %>
           </p>
           <p class="control">
-            <%= link_to "Sign Out", session[:user_id]=nil, class:"button has-text-white bg-coffee" %>
+            <%= link_to "Sign Out", sessions_path, class:"button has-text-white bg-coffee" %>
           </p>
         <% else%> 
           <p class="control">
@@ -74,8 +74,9 @@
       </div>
     </div>
   </nav>
-
+<div class ="wrapper">
     <%= yield %>
+</div>
 <footer>  <%= render './shared/footer' %> </footer>
 
   </body>
