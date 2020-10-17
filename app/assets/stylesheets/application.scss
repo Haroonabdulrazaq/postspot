@@ -39,8 +39,16 @@ $white: #f3f3f3;
   color: $grey;
 }
 
+.white-color {
+  color: $white;
+}
+
 .midot {
   font-size: 1.5em;
+}
+
+body {
+  position: relative;
 }
 
 nav {
@@ -48,9 +56,6 @@ nav {
     color: $light-grey;
     &:hover{
         color: $orange-red;
-    }
-    &:active{
-      color: $orange-red;
     }
   }
   .navbar-start {
@@ -69,17 +74,49 @@ nav {
     width:1400px;
     height: fit-content;
   }
-  .banner-body{
+  .banner-body {
     position: absolute;
     bottom: 0;
-     padding: 2em;
-     .banner-title{
+    padding: 2em;
+     .banner-title {
        color: $orange-red;
        font-weight: bolder;
        text-transform: capitalize;
      }
-     .banner-text{
-       color: $white;
-     }
   }
+}
+
+.small-anchor {
+   &:hover {
+     color: $white;
+     text-decoration: underline;
+   }
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .category-body {
+    position: relative;
+    img {
+      height: 20em;
+      width: 25em;
+    }
+    .category-name {
+      position: relative;
+      a{
+        position: absolute;
+        font-weight: bolder;
+        color: $white;
+        text-decoration: underline;
+        text-decoration-color: $orange;
+      }
+    }
+  }
+}
+
+i {
+  font-size: 2em;
 }

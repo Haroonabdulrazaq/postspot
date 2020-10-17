@@ -4,19 +4,19 @@
     <title>Postspot</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if flash[:notice]%>
-    <div class="notification is-danger global-notification ">
+    <div class="notification is-danger has-text-white global-notification ">
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
   <% if flash[:alert]%>
-    <div class="notification is-primary global-notification ">
+    <div class="notification is-primary has-text-white global-notification ">
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
@@ -51,16 +51,16 @@
 
       <div class="navbar-end">
         <div class="field is-grouped level">
-        
+          
+        <% if session[:user_id].present? %>
           <p class="control">        
             <%= link_to logged_in_user, edit_user_path(session[:user_id]) ,class:"is-dark" %>
           </p>
-        <% if session[:user_id].present? %>
           <p class="control">
             <%= link_to "New Article", new_article_path, class:"button has-text-white bg-coffee" %>
           </p>
           <p class="control">
-            <%= link_to "Sign Out", sessions_path, class:"button has-text-white bg-coffee" %>
+            <%= link_to "Sign Out", session[:user_id]=nil, class:"button has-text-white bg-coffee" %>
           </p>
         <% else%> 
           <p class="control">
@@ -76,5 +76,7 @@
   </nav>
 
     <%= yield %>
+<footer>  <%= render './shared/footer' %> </footer>
+
   </body>
 </html>

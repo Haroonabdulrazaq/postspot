@@ -6,21 +6,20 @@
       </div>
       <div class="banner-body">
         <h5 class="banner-title"><%= vote.article.title %></h5>
-        <p class="banner-text"><%= vote.article.text %>
-        <small ><%= link_to 'Read more', article_path(vote.article)%></small></p>
+        <p class="banner-text white-color"><%= vote.article.text %>
+        <small ><%= link_to 'Read more', article_path(vote.article), class: "small-anchor" %></small></p>
       </div>
     </div>
   <%end%>
  
-  <h1>All categoriess</h1>
+<div class="categories">
   <% categories = Category.includes(:most_recent_article).all%>
-
   <% categories.each do |category|%>
-  <ul>
-  <%= link_to category.name %>
-  <li>
-    <%= category.most_recent_article&.title %><br/>
-    <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
-    </li>
-  </ul>
+  <div class="category">
+    <div class="category-body">
+      <h2 class="category-name ml-5"><%= link_to category.name %></h2>
+      <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+    </div>
+  </div>
   <% end %>
+</div>
