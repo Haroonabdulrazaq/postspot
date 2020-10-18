@@ -1,6 +1,6 @@
 <h1>All Articles</h1><br/><br/>
 <% @articles.each do |article| %>
-    <ul><li>
+    <ul><li> 
         <%=link_to article_path(article.id) do %>
             <span>Created by</span> <%= article.creator.name %><br/> 
             <%= image_tag(article.image)%><br/><br/>
@@ -9,3 +9,4 @@
     <%=article.text%>
     </li></ul>
 <%end%>
+<%# Use flex box to position, Bulma tiles and Box to style this %>

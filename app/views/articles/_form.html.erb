@@ -1,18 +1,40 @@
-<%= form_with(model: @article, local: true ) do |f|%>
+<div class='columns is-centered mt-4'>
+  <div class='column is-5'>
+    <%= form_with(model: @article, local: true ) do |f|%>
+    <div class='field'>
+      <div class='control'>
+        <%= f.text_field :title, placeholder:'Title', class:'input mb-4' %>
+      </div>
+      <div class='control'>
+        <%= f.text_area :text, placeholder:'Text', size:'30x5',class:'textarea is-medium mb-4' %>
+      </div>
+      <div class='control '>
+        <%= f.label :category_id, 'Category', class: 'title is-4 label' %>
+                    <%= f.select(:category_id ) do %>
+                        <% [['Business', 1],
+                            ['Sport',2],
+                            ['Fashion',3],
+                            ['Entertainment', 4]].each do |c| %>
+                            <%= content_tag(:option, c.first, value: c.last) %> 
+                        <% end %>
+                        <% end %>
+      </div>
 
-<%= f.text_field :title, placeholder:'Title' %><br/><br/>
-<%= f.text_area :text, placeholder:'Text' %><br/><br/>
-<%= f.label :category_id, 'Category' %>
-            <%= f.select(:category_id ) do %>
-                <% [['Business', 1],
-                    ['Sport',2],
-                    ['Fashion',3],
-                    ['Entertainment', 4]].each do |c| %>
-                    <%= content_tag(:option, c.first, value: c.last) %> 
-                <% end %>
-                <% end %> <br/><br/>
-<%= f.file_field :image %><br/><br/>
-
-<%= f.submit%>
-
-<%end%>
+      <div class="file has-name mt-4">
+        <label class="file-label">
+            <%= f.file_field :image, class: 'mb-4 file-input', type: 'file' %>
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Choose an image…
+            </span>
+          </span>
+        </label>
+      </div> 
+        <%= f.submit class:'button is-success is-pulled-right'%>
+        <%end%>
+    </div>
+  </div>
+</div>

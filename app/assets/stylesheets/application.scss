@@ -23,16 +23,20 @@ $light-grey: #7a7a7a;
 $black: #333333;
 $white: #f3f3f3;
 
+.bg-orange {
+  background: #FF4500;
+}
+
+.bg-white {
+  background: $white;
+}
+
 .bg-coffee {
   background: $coffee-black;
 }
 
 .orange-color {
   color: $orange-red;
-}
-
-.bg-white {
-  background: $white;
 }
 
 .grey-color {
@@ -50,6 +54,19 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+}
+
+select {
+  padding: 0.5em;
+  color: inherit;
+  width: 20em;
+  height: 3em;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background: inherit;
+  border-radius:0.1em;
+  border:0.5px solid #aaa;
 }
 
 .wrapper {
