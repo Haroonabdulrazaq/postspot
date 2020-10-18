@@ -1,5 +1,12 @@
-<%= form_with model: @user do |f|%>
-    <%= f.label :name, 'Name' %>
-    <%= f.text_field :name %> <br/><br/>
-    <%= f.submit 'Submit' %>
-<%end%>
+<div class="columns is-centered">
+  <div class="column is-4">
+    <%= form_with model: @user do |f|%>
+      <div class='field'>
+        <p class='control'>
+          <%= f.text_field :name, placeholder:'Name', class:'input mb-4' %>
+        </p>
+         <%= f.submit 'Submit', class:'button is-success is-pulled-right' %>
+      </div>
+    <%end%>
+  </div>
+</div>
