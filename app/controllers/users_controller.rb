@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy]
+before_action :set_user, only: [:show]
     def index 
       @users = User.all 
     end
@@ -8,16 +8,13 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
       @user = User.new
     end
 
-    def edit
-    end
-
     def create 
       @user = User.new(user_params)
       if @user.save
         flash[:notice] = 'Signed up sucessfully'
-        redirect_to sigin_path
+        redirect_to signin_path
       else
-        flash[:alert] = 'Can not sign up for some reasons'
+        flash.now[:alert] = 'Can not sign up for some reasons'
         render :new
       end
     end

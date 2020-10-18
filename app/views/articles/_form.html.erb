@@ -1,6 +1,21 @@
 <div class='columns is-centered mt-4'>
   <div class='column is-5'>
     <%= form_with(model: @article, local: true ) do |f|%>
+      <% if @article.errors.any? %>
+        <div class="message is-danger">
+        <div class="message-header">
+          <p>
+            <%= pluralize(@article.errors.count,'error') %>Prohibited this article from being saved
+          </p>
+        </div>
+          <ul>
+            <% @article.errors.full_messages.each do |error| %>
+              <li class="has-text-centered"> <%= error %> </li>
+            <%end%>
+          </ul>
+        </div>
+    <% end %>
+
     <div class='field'>
       <div class='control'>
         <%= f.text_field :title, placeholder:'Title', class:'input mb-4' %>

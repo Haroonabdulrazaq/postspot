@@ -1,9 +1,28 @@
 <div class="columns is-centered">
   <div class="column is-4">
-    <%= form_with model: @user do |f|%>
+    <%= form_with model: @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="message is-danger">
+          <div class="message-header">
+          <p>
+            <%= pluralize(@user.errors.count,'error')%> Prohibited this user from being created
+          </p>
+          </div>
+          <div class="message-body">
+            <ul>
+              <% @user.errors.full_messages.each do |error| %>
+                <li class='has-text-centered'> <%= error %> </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
       <div class='field'>
-        <p class='control'>
+        <p class='control has-icons-left'>
           <%= f.text_field :name, placeholder:'Name', class:'input mb-4' %>
+          <span class='icon is-small is-left'>
+            <i class='fa fa-user'></i>
+          </span>
         </p>
          <%= f.submit 'Submit', class:'button is-success is-pulled-right' %>
       </div>

@@ -11,12 +11,12 @@
 
   <body>
     <% if flash[:notice]%>
-    <div class="notification is-danger has-text-white global-notification ">
-      <p class="alert"><%= alert %></p>
+    <div class="notification is-primary has-text-white global-notification mb-0">
+      <p class="alert"><%= notice %></p>
     </div>
   <% end %>
   <% if flash[:alert]%>
-    <div class="notification is-primary has-text-white global-notification ">
+    <div class="notification is-danger has-text-white global-notification mb-0">
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
@@ -54,10 +54,15 @@
           
         <% if session[:user_id].present? %>
           <p class="control">        
-            <%= link_to logged_in_user, edit_user_path(session[:user_id]) ,class:"is-dark" %>
+            <%= link_to logged_in_user ,class:"is-dark" %>
           </p>
           <p class="control">
-            <%= link_to "New Article", new_article_path, class:"button has-text-white bg-coffee" %>
+            <%= link_to new_article_path, class:"button has-text-white bg-coffee" do %>
+              <span class="icon">
+                <i class="fa fa-plus-circle is-3" arial-hidden="true"></i>
+              </span>
+              <span>New Article</span>
+            <%end%>
           </p>
           <p class="control">
             <%= link_to "Sign Out", sessions_path, class:"button has-text-white bg-coffee" %>

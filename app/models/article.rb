@@ -3,7 +3,8 @@ class Article < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_one_attached :image
   belongs_to :category, class_name: 'Category', foreign_key: :category_id
-  
+  validates :title, :text, :image, :category_id, presence: true
+
   scope :most_recent_by_category, -> do
     from(
       <<~SQL
