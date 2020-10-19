@@ -41,7 +41,7 @@
             <%end%>
           </p>
           <p class="control">
-            <%= link_to "Sign Out", sessions_path, method: :delete,class:"button has-text-white bg-coffee" %>
+            <%= link_to "Sign Out", session_path(session[:user_id]), method: :delete,class:"button has-text-white bg-coffee" %>
           </p>
         <% else%> 
           <p class="control">

@@ -2,7 +2,7 @@
     <h2 class="title is-3 has-text-centered"><%= @article.title %> </h2>
   <div class='columns is-centered'>
   <%# image column %>
- <div class='column is-6'>
+ <div class='column is-6 box'>
   <div class='column-image'>
     <figure class='image'>
      <%= image_tag(@article.image) %>
@@ -34,6 +34,15 @@
         </span>
         <span class='has-text-centered'>
         <strong>Upvotes </strong><%= @article.votes.count%>
+        </span>
+    </a>
+
+    <a class="panel-block">
+        <span class="panel-icon">
+         <i class="fa fa-clock"></i>
+        </span>
+        <span class='has-text-centered'>
+        <strong>Created </strong><%= time_ago_in_words(@article.created_at) %> ago
         </span>
     </a>
 
