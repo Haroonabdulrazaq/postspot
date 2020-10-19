@@ -28,7 +28,7 @@
       <div class="navbar-end">
         <div class="field is-grouped level">
           
-        <% if session[:user_id].present? %>
+        <% if current_user %>
           <p class="control">        
             <%= link_to logged_in_user ,class:"is-dark" %>
           </p>

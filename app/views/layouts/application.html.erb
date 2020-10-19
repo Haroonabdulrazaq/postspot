@@ -10,6 +10,7 @@
   </head>
 
   <body>
+   <%= render './shared/navigation' %>
     <% if flash[:notice]%>
     <div class="notification is-primary has-text-white global-notification mb-0">
       <p class="alert"><%= notice %></p>
@@ -20,8 +21,6 @@
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
-
- <%= render './shared/navigation' %>
 <div class ="wrapper">
     <%= yield %>
 </div>

@@ -1,3 +1,25 @@
 // Place all the styles related to the article controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.article-container {
+  width: 70%;
+  height: 18em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .article-img {
+    width: 35%;
+      img {
+        width: 20em;
+        height: 17em;
+      }
+  }
+  .article-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
