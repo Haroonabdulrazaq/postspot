@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
     def current_user

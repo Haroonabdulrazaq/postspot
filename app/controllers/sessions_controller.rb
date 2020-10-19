@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       @user = User.find_by(name: params[:session][:name])
 
       if @user
-        session[:user_id] = @user.id 
+        session[:user_id] = @user.id
         flash[:notice] = "Signed In Sucessfully" 
         redirect_to root_path
       else
@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      log_out
+    session.delete(:user.id)
+    @current_user = nil
+    redirect_to root_path
     end
 end

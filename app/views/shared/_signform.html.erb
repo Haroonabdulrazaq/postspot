@@ -19,9 +19,23 @@
       <% end %>
       <div class='field'>
         <p class='control has-icons-left'>
-          <%= f.text_field :name, placeholder:'Name', class:'input mb-4' %>
+          <%= f.text_field :name, placeholder:'Username', class:'input mb-4' %>
           <span class='icon is-small is-left'>
             <i class='fa fa-user'></i>
+          </span>
+        </p>
+
+        <p class='control has-icons-left'>
+          <%= f.text_field :password, placeholder:'Password', class:'input mb-4' %>
+          <span class='icon is-small is-left'>
+            <i class='fa fa-unlock-alt'></i>
+          </span>
+        </p>
+
+        <p class='control has-icons-left'>
+          <%= f.password_field :password_confirmation, placeholder:'Confirm password', class:'input mb-4' %>
+          <span class='icon is-small is-left'>
+            <i class='fa fa-unlock'></i>
           </span>
         </p>
          <%= f.submit 'Submit', class:'button is-success is-pulled-right' %>

@@ -1,0 +1,57 @@
+  <nav class="navbar bg-white">
+    <div class="navbar-brand mr-6">
+      <%= link_to root_path, class:"navbar-item" do %>
+        <h1 class="title is-4"> PostSpot <span class="midot orange-color">&#183;</span></h1>
+      <% end %> 
+
+      <div class="navbar-burger burger" data-target="navbarExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id = "navbarExample" class="navbar-menu">
+      <div class="navbar-start ml-6">
+        <div class="field is-grouped level">
+          <p class="control">
+            <%= link_to 'Home', categories_path, class: ""%>
+          </p>
+          <% Category.all.each do |category|%>
+            <p class="control">
+              <%= link_to category.name, articles_path(:cat_id => category.id), class: '' %>
+            </p>
+          <% end %>       
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="field is-grouped level">
+          
+        <% if session[:user_id].present? %>
+          <p class="control">        
+            <%= link_to logged_in_user ,class:"is-dark" %>
+          </p>
+          <p class="control">
+            <%= link_to new_article_path, class:"button has-text-white bg-coffee" do %>
+              <span class="icon">
+                <i class="fa fa-plus-circle is-3" arial-hidden="true"></i>
+              </span>
+              <span>New Article</span>
+            <%end%>
+          </p>
+          <p class="control">
+            <%= link_to "Sign Out", sessions_path, method: :delete,class:"button has-text-white bg-coffee" %>
+          </p>
+        <% else%> 
+          <p class="control">
+            <%= link_to "Sign In", signin_path,  class:"button has-text-white bg-coffee" %>
+          </p>
+          <p class="control">
+            <%= link_to 'Sign Up', new_user_path, class: "button has-text-white bg-coffee"%>
+          </p>
+        <%end%>       
+        </div>
+      </div>
+    </div>
+  </nav>
