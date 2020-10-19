@@ -22,6 +22,7 @@ $grey: #3c3c3c;
 $light-grey: #7a7a7a;
 $black: #333333;
 $white: #f3f3f3;
+$tablet-breakpoint: 768px;
 
 .bg-orange {
   background: #FF4500;
@@ -136,6 +137,7 @@ nav {
     }
     .category-name {
       position: relative;
+      font-size: 1.5em;
       a{
         position: absolute;
         font-weight: bolder;
@@ -155,3 +157,18 @@ i {
   flex-shrink: 0; 
 }
 
+@media (max-width: $tablet-breakpoint) {
+  .categories {
+    display: flex;
+    flex-direction: column;
+      .category-body {
+        img {
+      height: 50em;
+      width: 65em;
+      }
+    }
+  }
+  .category-name{
+    font-size: 3em;
+  }
+}
