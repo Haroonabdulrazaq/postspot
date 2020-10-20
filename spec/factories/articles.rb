@@ -5,4 +5,4 @@ FactoryGirl.define do
       category_id { Faker::Number.digit }
       image { Faker::LoremPixel.image }
     end
-  end
+end
