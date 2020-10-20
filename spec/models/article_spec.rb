@@ -25,6 +25,4 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of(:image) }
     it { is_expected.to validate_presence_of(:category_id) }
   end
-  
-
 end

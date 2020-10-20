@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   belongs_to :category, class_name: 'Category', foreign_key: :category_id
   validates :title, :text, :image, :category_id, presence: true
 
-  scope :most_recent_by_category, -> do
+  scope :most_recent_by_category, lambda {
     from(
       <<~SQL
         (
@@ -20,5 +20,5 @@ class Article < ApplicationRecord
         ) articles
       SQL
     )
-  end
+  }
 end
