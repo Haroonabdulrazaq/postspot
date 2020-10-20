@@ -8,15 +8,14 @@
             <%= pluralize(@user.errors.count,'error')%> Prohibited this user from being created
           </p>
           </div>
-          <div class="message-body">
             <ul>
-              <% @user.errors.full_messages.each do |error| %>
+              <%= @user.errors.full_messages.each do |error| %>
                 <li class='has-text-centered'> <%= error %> </li>
               <% end %>
             </ul>
-          </div>
         </div>
       <% end %>
+   
       <div class='field'>
         <p class='control has-icons-left'>
           <%= f.text_field :name, placeholder:'Username', class:'input mb-4' %>
@@ -26,7 +25,7 @@
         </p>
 
         <p class='control has-icons-left'>
-          <%= f.text_field :password, placeholder:'Password', class:'input mb-4' %>
+          <%= f.password_field :password, placeholder:'Password', class:'input mb-4' %>
           <span class='icon is-small is-left'>
             <i class='fa fa-unlock-alt'></i>
           </span>

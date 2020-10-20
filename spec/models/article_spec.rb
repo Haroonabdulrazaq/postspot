@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  before { @article = FactoryGirl.build(:article) }
+  before { @article = FactoryBot.build(:article) }
 
   context 'should respond to all given fields' do
     it { should respond_to(:title) }
