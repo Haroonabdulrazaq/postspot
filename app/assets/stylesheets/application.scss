@@ -55,6 +55,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 select {
@@ -76,10 +77,6 @@ select {
 
 .midot {
   font-size: 1.5em;
-}
-
-body {
-  position: relative;
 }
 
 nav {

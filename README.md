@@ -15,11 +15,11 @@ It is a Lifestyle aplication, where Authors can post on several category like Bu
 
 ## Work Done :computer:
 - The user logs in to the app, only by typing the username and password, after sign up
-- Featured article with full-width image and title in the first row. which represents article with the biggest number of votes.
+- Featured article with full-width image and title in the first row. which represents an article with the biggest number of votes.
 - List of all categories in order of priority. Each category is displayed as a square with its name on the top and its most recent article's title in the bottom.
 - When the user clicks the category name they can see all articles in that category.
 - Each page use the same top menu and footer
-- When user opens Create new article
+- When the user opens Create a new article
 
 ## Getting Started 
 
@@ -34,9 +34,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.6.3
+- Rails: 5.2.3
+- Postgres: >=9.5
 
 ### Setup :wrench:
 
@@ -89,7 +89,7 @@ Open `http://localhost:3000/` in your browser.
 
  Heroku
 
-## ✒️ Authors <a name = "author"></a>
+## ✒️ Author
 
 👤 **Haroon Abdulrazaq**
 

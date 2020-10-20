@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     cat_id = params[:cat_id]
 
-    @articles = unless cat_id.nil?
+    @articles = if !cat_id.nil?
                   Article.where(category_id: cat_id).order('created_at DESC')
                 else
                   Article.all.order('created_at DESC')
