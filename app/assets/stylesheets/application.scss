@@ -138,12 +138,23 @@ nav {
     .category-name {
       position: relative;
       font-size: 1.5em;
-      a{
+      a {
         position: absolute;
         font-weight: bolder;
         color: $white;
         text-decoration: underline;
         text-decoration-color: $orange;
+      }
+    }
+    .category-title {
+      position: absolute;
+      bottom: 0;
+      font-size: 1em;
+      a {
+        color: $white;
+        &:hover{
+          color: $orange-red;
+        }
       }
     }
   }

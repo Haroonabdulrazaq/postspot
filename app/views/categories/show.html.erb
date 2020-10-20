@@ -1,5 +1,5 @@
 <div class='section'>
-  <% @category.articles.each do |article|%>
+  <% @category.articles.order('created_at DESC').each do |article|%>
     <div class='article-container'>
       <div class='article-img'>
         <%= image_tag(article.image)%>

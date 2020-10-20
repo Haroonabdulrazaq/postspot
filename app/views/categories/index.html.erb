@@ -19,6 +19,7 @@
       <div class="category-body">
         <h2 class="category-name ml-5"><%= link_to category.name %></h2>
         <%= link_to image_tag(category.most_recent_article&.image), category_path(category) %>
+        <h3 class="category-title mb-6 ml-4 has-text-weight-bold"><%= link_to category.most_recent_article&.title, class:"white-color"%></h3>
       </div>
     </div>
     <% end %>
