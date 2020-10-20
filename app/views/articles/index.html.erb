@@ -6,6 +6,7 @@
         <%= image_tag(article.image)%>
       </div>
       <div class='article-text box'>
+       <h2 class='has-text-weight-bold'> On <%= article.category.name %> </h2>
         <h3 class='title is-4 has-text-centered'><%=article.title%></h3>
         <div><%=article.text%></div>
         <div>

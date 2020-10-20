@@ -21,6 +21,15 @@
 
     <a class="panel-block">
         <span class="panel-icon">
+          <i class="fa fa-address-card"></i>
+        </span>
+        <span class='has-text-centered'>
+        <strong>Category </strong><%= @article.category.name%>
+        </span>
+    </a>
+
+    <a class="panel-block">
+        <span class="panel-icon">
         <i class='fa fa-user'></i>
         </span>
         <span class='has-text-centered'>
@@ -39,7 +48,7 @@
 
     <a class="panel-block">
         <span class="panel-icon">
-         <i class="fa fa-time"></i>
+           <i class="fa fa-hourglass-end"></i>
         </span>
         <span >
         <strong>Created </strong><%= time_ago_in_words(@article.created_at) %> ago
