@@ -5,6 +5,10 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+# PostgeeSql
+gem 'pg', '~> 1.2', '>= 1.2.3'
+# DotEnv rails
+gem 'dotenv-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
