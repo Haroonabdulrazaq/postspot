@@ -1,20 +1,16 @@
 <div class="section">
     <h2 class="title is-3 has-text-centered"><%= @article.title %> </h2>
   <div class='columns is-centered'>
-  <%# image column %>
  <div class='column is-6 box'>
   <div class='column-image'>
     <figure class='image'>
-     <%= image_tag(@article.image) %>
+      <%= image_tag(@article.image) %>  
     </figure>
   </div>
-    <%# text column %>
   <div class='column article-text has-text-centered'>
     <%= @article.text %>
   </div>
 </div>
- 
-    <%# Info column %>
   <div class='column article-info is-3'>
   <nav class='panel'>
     <p class='panel-heading'>Article Info</p>
