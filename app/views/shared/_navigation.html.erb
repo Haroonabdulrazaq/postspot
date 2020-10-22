@@ -27,11 +27,10 @@
 
       <div class="navbar-end">
         <div class="field is-grouped level">
-          
-        <% if current_user %>
           <p class="control">        
             <%= link_to logged_in_user ,class:"is-dark" %>
-          </p>
+          </p> 
+        <% if current_user %>
           <p class="control">
             <%= link_to new_article_path, class:"button has-text-white bg-coffee" do %>
               <span class="icon">
