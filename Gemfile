@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 # DotEnv rails
 gem 'dotenv-rails'
+# AWS
+gem 'aws-sdk-s3', require: false
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server

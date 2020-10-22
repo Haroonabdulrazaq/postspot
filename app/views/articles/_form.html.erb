@@ -5,7 +5,7 @@
         <div class="message is-danger">
         <div class="message-header">
           <p>
-            <%= pluralize(@article.errors.count,'error') %>Prohibited this article from being saved
+            <%= pluralize(@article.errors.count,'error ') %>Prohibited this article from being saved
           </p>
         </div>
           <ul>
@@ -29,7 +29,7 @@
                         <% [['Business', 1],
                             ['Sport',2],
                             ['Fashion',3],
-                            ['Entertainment', 4]].each do |c| %>
+                            ['Entertainment', 9]].each do |c| %>
                             <%= content_tag(:option, c.first, value: c.last) %> 
                         <% end %>
                         <% end %>

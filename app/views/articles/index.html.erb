@@ -3,7 +3,7 @@
   <% @articles.each do |article| %>
     <div class='article-container'>
       <div class='article-img'>
-        <%= image_tag(article.image)%>
+        <%= image_tag(article.image) if article.image.attached? %>
       </div>
       <div class='article-text box'>
        <h2 class='has-text-weight-bold'> On <%= article.category.name %> </h2>
