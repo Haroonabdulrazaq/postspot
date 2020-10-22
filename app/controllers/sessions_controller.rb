@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
     @session = @user
   end
-# rubocop disable:Style/SafeNavigation
+# rubocop:disable Style/SafeNavigation
   def create
     @user = User.find_by(name: params[:session][:name])
 
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-# rubocop enable:Style/SafeNavigation
+# rubocop:enable Style/SafeNavigation
   def destroy
     session.delete(:user_id)
     @current_user = nil
