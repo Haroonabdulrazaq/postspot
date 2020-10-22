@@ -11,8 +11,6 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'dotenv-rails'
 # AWS
 gem 'aws-sdk-s3', require: false
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # View Tables better
