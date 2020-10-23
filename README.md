@@ -2,7 +2,7 @@
 It is a Lifestyle aplication, where Authors can post on several category like Bussiness, Sport, Entertainment, Fashion and so on. A user can read an article and Upvate that article. A user(reader) can view authors , see the number of article and the number of Upvote an Author has recieved. The most popular article(by highest upvote) gets an incentive of been on the front-page/banner of the application as the most popular article. Other category are showcased below as the most recent in each category.
 
 ## Screenshot :camera:
-
+![screenshot](./app/assets/images/README Image.png)
 
 ## Built With :heart:
 
@@ -11,7 +11,7 @@ It is a Lifestyle aplication, where Authors can post on several category like Bu
 - Postgres 12.0
 
 ## Live Demo :rocket:
-
+ [PostSpot](https://postspot-article.herokuapp.com/)
 
 ## Work Done :computer:
 - The user logs in to the app, only by typing the username and password, after sign up
