@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Article.create([{ title: 'Why do we use it?',
-                  text: 'It is a long established fact that a reader will be distracted by the readable content',
-                  user_id: 1, category_id: 1 }])
 Category.create([ { name: 'Business', priority: 1 },
                   { name: 'Sport', priority: 2 },
                   { name: 'Fashion', priority: 3 },
