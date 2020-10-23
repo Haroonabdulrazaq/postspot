@@ -106,11 +106,14 @@ nav {
     position: absolute;
     bottom: 0;
     padding: 2em;
-     .banner-title {
-       color: $orange-red;
-       font-weight: bolder;
-       text-transform: capitalize;
-     }
+    background: $grey;
+    opacity: 0.8;
+    border-radius: 3px;
+    .banner-title {
+      color: $orange-red;
+      font-weight: bolder;
+      text-transform: capitalize; 
+    }
   }
 }
 
