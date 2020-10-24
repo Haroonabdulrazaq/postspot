@@ -3,11 +3,11 @@
   <div class='columns is-centered'>
  <div class='column is-6 box'>
   <div class='column-image'>
-    <figure class='image'>
+    <div class='image'>
       <%= image_tag(@article.image) if @article.image.attached? %>
-    </figure>
+    </div>
   </div>
-  <div class='column article-text has-text-centered'>
+  <div class='column article-text has-text-centered mt-6'>
     <%= @article.text %>
   </div>
 </div>

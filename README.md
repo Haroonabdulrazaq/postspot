@@ -2,7 +2,7 @@
 It is a Lifestyle aplication, where Authors can post on several category like Bussiness, Sport, Entertainment, Fashion and so on. A user can read an article and Upvate that article. A user(reader) can view authors , see the number of article and the number of Upvote an Author has recieved. The most popular article(by highest upvote) gets an incentive of been on the front-page/banner of the application as the most popular article. Other category are showcased below as the most recent in each category.
 
 ## Screenshot :camera:
-![screenshot](./app/assets/images/README Image.png)
+![screenshot](app/assets/images/Image.png)
 
 ## Built With :heart:
 
@@ -31,12 +31,16 @@ To get a local copy up and running follow these simple example steps.
 - Run migration
 
 
-
 ### Prerequisites
 
 - Ruby: 2.6.3
 - Rails: 5.2.3
 - Postgres: >=9.5
+
+## Setting up Postgres
+Read this to set up [postgres](https://www.calhoun.io/how-to-install-postgresql-9-5-on-ubuntu-16-04/) for development
+or simply start project with 
+<code> rails new app_name --database=postgresql </code>
 
 ### Setup :wrench:
 
@@ -49,13 +53,27 @@ bundle install
 Setup database with:
 
 ```
+   yarn instal --chack-files
    rails db:create
    rails db:migrate
+```
+    Start server with:
+```
+    rails server
 ```
 ### Test 
  ```
     rails spec
  ```
+## Set up Repo for testing
+- How to setup – RSpec, Capybara, Shoulda-Matchers, Database Cleaner
+- How to create a factory using Factory Girl Rails and Faker, you you can [read more](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/) for details
+
+
+### Active Storage Setup - Optional
+
+AWS S3 buckets was used for active storage in production and development. Follow this tutorial to [learn](https://medium.com/@iachieve80/rails-6-0-upload-images-using-active-storage-and-amazon-simple-storage-service-amazon-s3-36861c03dc4a) how to set up AWS S3 for active storage.
+
 
 ### Github Actions
 
