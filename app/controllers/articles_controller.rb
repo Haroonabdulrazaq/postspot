@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
     if @article.save
       flash[:notice] = 'Article created Sucessfully'
-      redirect_to articles_path
+      redirect_to article_path(@article)
     else
       flash.now[:alert] = 'Article not created for some reasons'
       render :new
