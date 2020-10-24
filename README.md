@@ -130,7 +130,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - [Salsify](www.salsify.com)
-- Design idea by N[elson Sakwa](https://www.behance.net/sakwadesignstudio) on Behance
+- Design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on Behance
 
 ## MIT Licence :registered:
 
