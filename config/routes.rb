@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :articles do
     member do
       get 'votes'
+      get 'downvote'
     end
   end
 

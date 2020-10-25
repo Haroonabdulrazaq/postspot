@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
 
     if @vote.save
       flash[:notice] = 'Upvoted Sucessfully'
-      redirect_to articles_path
+      redirect_to article_path
     else
       flash.now[:alert] = 'Can not upvote this article'
       render :show
@@ -50,8 +50,10 @@ class ArticlesController < ApplicationController
   end
 
   def downvote
-    @vote = Vote.create(user_id: session[:user_id], article_id: params[:id])
+    @vote = Vote.find_by(user_id: session[:user_id], article_id: params[:id])
     @vote.destroy
+    flash[:notice] = 'Downvoted Sucessfully'
+    redirect_to article_path
   end
 
   def destroy
