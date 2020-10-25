@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def voted_user
     if Vote.find_by(user_id: session[:user_id], article_id: @article.id).present?
-      link_to 'Upvoted'
+      link_to 'Downvote', downvote_article_path
     else
       link_to 'Upvote', votes_article_path
     end

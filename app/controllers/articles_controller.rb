@@ -49,6 +49,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def downvote
+    @vote = Vote.create(user_id: session[:user_id], article_id: params[:id])
+    @vote.destroy
+  end
+
   def destroy
     @article.destroy
     flash[:notice] = 'Article deleted Sucessfully'
