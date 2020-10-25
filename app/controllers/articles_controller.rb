@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   def downvote
     @vote = Vote.find_by(user_id: session[:user_id], article_id: params[:id])
     @vote.destroy
-    flash[:notice] = 'Downvoted Sucessfully'
+    flash[:alert] = 'Down voted Sucessfully'
     redirect_to article_path
   end
 
