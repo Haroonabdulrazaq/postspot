@@ -25,7 +25,7 @@ $white: #f3f3f3;
 $tablet-breakpoint: 768px;
 
 .bg-orange {
-  background: #FF4500;
+  background: $orange-red;
 }
 
 .bg-white {
@@ -95,91 +95,6 @@ nav {
   }
 }
 
-.banner{
-  position: relative;
-  height: 25em;
-  img{
-    width: 87.50em;
-    height: 25em;
-  }
-  .banner-body {
-    position: absolute;
-    bottom: 0;
-    padding: 2em;
-    background: $grey;
-    opacity: 0.8;
-    border-radius: 3px;
-    .banner-title {
-      color: $orange-red;
-      font-weight: bolder;
-      text-transform: capitalize; 
-    }
-  }
-}
-
-.small-anchor {
-   &:hover {
-     color: $white;
-     text-decoration: underline;
-   }
-}
-
-.categories {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  .category-body {
-    position: relative;
-    img {
-      height: 20em;
-      width: 25em;
-    }
-    .category-name {
-      position: relative;
-      font-size: 1.5em;
-      a {
-        position: absolute;
-        font-weight: bolder;
-        color: $white;
-        text-decoration: underline;
-        text-decoration-color: $orange;
-      }
-    }
-    .category-title {
-      position: absolute;
-      bottom: 0;
-      font-size: 1em;
-      a {
-        color: $white;
-        &:hover{
-          color: $orange-red;
-        }
-      }
-    }
-  }
-}
-
-i {
-  font-size: 2em;
-}
-
 .coffee-footer {
   flex-shrink: 0; 
-}
-
-@media (max-width: $tablet-breakpoint) {
-  .categories {
-    display: flex;
-    flex-direction: column;
-      .category-body {
-        img {
-      height: 50em;
-      width: 65em;
-      }
-    }
-  }
-  .category-name{
-    font-size: 3em;
-  }
 }

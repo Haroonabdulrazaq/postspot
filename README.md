@@ -36,6 +36,7 @@ To get a local copy up and running follow these simple example steps.
 - Ruby: 2.6.3
 - Rails: 5.2.3
 - Postgres: >=9.5
+- Bulma
 
 ## Setting up Postgres
 Read this to set up [postgres](https://www.calhoun.io/how-to-install-postgresql-9-5-on-ubuntu-16-04/) for development
@@ -52,8 +53,26 @@ bundle install
 
 Setup database with:
 
+To configure your databse.yml make this changes in config/database.yml
+
 ```
-   yarn instal --chack-files
+   default: &default
+    adapter: postgresql 
+    encoding: unicode 
+    timeout: 5000 
+
+    development: <<: *default 
+    database: development 
+    
+    test: <<: *default 
+    database: test
+
+    production: <<: *default 
+    database: production
+```
+Then run
+```
+   yarn install --chack-files
    rails db:create
    rails db:migrate
 ```
