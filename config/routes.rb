@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :articles do
+    resources :comments
     member do
       get 'votes'
       get 'downvote'
