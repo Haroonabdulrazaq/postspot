@@ -69,6 +69,6 @@ class ArticlesController < ApplicationController
   end
 
   def category_id
-    cat_id = params[:cat_id]
+    params[:cat_id]
   end
 end
