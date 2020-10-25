@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def articles_category(cat_id)
+    if !cat_id.nil?
+      Article.where(category_id: cat_id).order('created_at DESC')
+    else
+      Article.all.order('created_at DESC')
+    end
+  end
 end

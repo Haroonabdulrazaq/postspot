@@ -2,13 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    cat_id = params[:cat_id]
-
-    @articles = if !cat_id.nil?
-                  Article.where(category_id: cat_id).order('created_at DESC')
-                else
-                  Article.all.order('created_at DESC')
-                end
+    @articles = articles_category(category_id)
   end
 
   def new
@@ -65,5 +59,9 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def category_id
+    cat_id = params[:cat_id]
   end
 end
