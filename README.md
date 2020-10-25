@@ -80,6 +80,9 @@ Then run
 ```
     rails server
 ```
+### Entity Relationship Diagram(ERD)
+  [](app/assets/images/ERD.png)
+
 ### Test 
  ```
     rails spec
