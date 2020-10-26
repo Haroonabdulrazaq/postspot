@@ -1,0 +1,26 @@
+  <% popular = Vote.popular %>
+    <% popular.each do |vote| %>
+    <div class="banner">
+      <div class="banner-img">
+        <%= image_tag(vote.article.image) if vote.article.image.attached? %>
+      </div>
+      <div class="banner-body">
+        <h5 class="banner-title"><%= vote.article.title %></h5>
+        <p class="banner-text white-color"><%= vote.article.text %>
+        <small ><%= link_to 'Read more', article_path(vote.article), class: "small-anchor" %></small></p>
+      </div>
+    </div>
+  <%end%>
+
+  <div class="categories">
+    <% categories = Category.includes(:most_recent_article).all%>
+    <% categories.each do |category|%>
+    <div class="category">
+      <div class="category-body">
+        <h2 class="category-name ml-5"><%= link_to category.name %></h2>
+          <%= link_to image_tag(category.most_recent_article&.image) , category_path(category)%>
+        <h3 class="category-title mb-6 ml-4 has-text-weight-bold"><%= link_to category.most_recent_article&.title, class:"white-color"%></h3>
+      </div>
+    </div>
+    <% end %>
+  </div>

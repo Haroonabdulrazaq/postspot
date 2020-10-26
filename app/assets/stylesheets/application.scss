@@ -1,0 +1,100 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bulma";
+
+$coffee-black: #3b2f2f;
+$orange-red: #FF4500;
+$orange: #FFA500;
+$grey: #3c3c3c;
+$light-grey: #7a7a7a;
+$black: #333333;
+$white: #f3f3f3;
+$tablet-breakpoint: 768px;
+
+.bg-orange {
+  background: $orange-red;
+}
+
+.bg-white {
+  background: $white;
+}
+
+.bg-coffee {
+  background: $coffee-black;
+}
+
+.orange-color {
+  color: $orange-red;
+}
+
+.grey-color {
+  color: $grey;
+}
+
+.white-color {
+  color: $white;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+select {
+  padding: 0.5em;
+  color: inherit;
+  width: 20em;
+  height: 3em;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background: inherit;
+  border-radius:0.1em;
+  border:0.5px solid #aaa;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+.midot {
+  font-size: 1.5em;
+}
+
+nav {
+  a {
+    color: $light-grey;
+    &:hover{
+        color: $orange-red;
+    }
+  }
+  .navbar-start {
+    a {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      margin-left: 1.5em;
+    }
+  }
+}
+
+.coffee-footer {
+  flex-shrink: 0; 
+}

@@ -1,0 +1,20 @@
+<div class='section'>
+<h3 class='title is-3 has-text-centered'>All Article </h3>
+  <% @articles.each do |article| %>
+    <div class='article-container'>
+      <div class='article-img'>
+        <%= image_tag(article.image) if article.image.attached? %>
+      </div>
+      <div class='article-text box'>
+       <h2 class='has-text-weight-bold'> On <%= article.category.name %> </h2>
+        <h3 class='title is-4 has-text-centered'><%=article.title%></h3>
+        <div><%=article.text%></div>
+        <div>
+          <span class='orange-color'>Created by <%= article.creator.name %></span>
+          <%= link_to 'Read more', article_path(article), class:'button is-success is-outlined is-pulled-right' %>
+        </div>
+      </div>
+    </div>
+    <div class='mt-4'></div>
+  <% end %>
+</div>

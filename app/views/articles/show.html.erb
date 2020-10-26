@@ -1,0 +1,72 @@
+<div class="section">
+    <h2 class="title is-3 has-text-centered"><%= @article.title %> </h2>
+  <div class='columns is-centered'>
+ <div class='column is-6 box'>
+  <div class='column-image'>
+    <div class='image'>
+      <%= image_tag(@article.image) if @article.image.attached? %>
+    </div>
+  </div>
+  <div class='column article-text has-text-centered mt-6'>
+    <%= @article.text %>
+  </div>
+</div>
+  <div class='column article-info is-3'>
+  <nav class='panel'>
+    <p class='panel-heading'>Article Info</p>
+
+    <a class="panel-block">
+        <span class="panel-icon">
+          <i class="fa fa-address-card"></i>
+        </span>
+        <span class='has-text-centered'>
+        <strong>Category </strong><%= @article.category.name%>
+        </span>
+    </a>
+
+    <a class="panel-block">
+        <span class="panel-icon">
+        <i class='fa fa-user'></i>
+        </span>
+        <span class='has-text-centered'>
+        <strong>Author </strong><%= @article.creator.name%>
+        </span>
+    </a>
+
+    <a class="panel-block">
+        <span class="panel-icon">
+        <i class="fa fa-thumbs-up"></i>
+        </span>
+        <span class='has-text-centered'>
+        <strong>Upvotes </strong><%= @article.votes.count%>
+        </span>
+    </a>
+
+    <a class="panel-block">
+        <span class="panel-icon">
+           <i class="fa fa-hourglass-end"></i>
+        </span>
+        <span >
+        <strong>Created </strong><%= time_ago_in_words(@article.created_at) %> ago
+        </span>
+    </a>
+
+    <div class="panel-block">
+        <span class="panel-icon">
+        <i class=""></i>
+        </span>
+        <span class='has-text-centered'>
+        <% if current_user %>
+          <%= voted_user %>
+        <% end %>
+        </span>
+    </div>
+
+  </nav>
+<%= render 'shared/btnnav'%>
+  </div>
+
+</div>
+</div>
+
+    

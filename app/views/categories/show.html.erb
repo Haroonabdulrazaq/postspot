@@ -1,0 +1,20 @@
+<div class='section'>
+  <% @category.articles.order('created_at DESC').each do |article|%>
+    <div class='article-container'>
+      <div class='article-img'>
+        <%= image_tag(article.image) if article.image.attached? %>
+      </div>
+      <div class='article-text box'>
+        <h3 class='title is-4 has-text-centered'><%=article.title%></h3>
+        <div><%=article.text%></div>
+        <div>
+          <span class='orange-color'>Created by <%= article.creator.name %></span>
+          <%= link_to 'Read more', article_path(article), class:'button is-success is-outlined is-pulled-right' %>
+        </div>
+      </div>
+    </div>
+    <div class='mt-4'></div>
+  <% end %>
+</div>
+
+
