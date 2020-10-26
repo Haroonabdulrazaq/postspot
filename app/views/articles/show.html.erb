@@ -71,12 +71,7 @@
 <h3 class='title is-4 has-text-centered'><%= @article.comments.count %> Comments</h3>
   <div class='columns ml-6'>
     <div class='column is-6'>
-      <% @article.comments.each do |comment| %>
-      <div class='bg-grey'>
-        <strong class='mb-6'><%= comment.name %></strong>
-        <p class='has-text-centered'><%= comment.body %></p>
-      </div> 
-      <% end %>
+    <%= render './comments/show' %>
     </div>
     <div class='column is-6'>
       <%= render './comments/form' %>

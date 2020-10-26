@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def index
     @comments = Comment.all.order('created_at DESC')
   end
@@ -16,18 +15,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-  end
-
-  def update
-    @comment.update(comments_params)
-    if @comments.save
-        flash[:notice] = 'Updated sucessfully'
-        redirect_to article_path
-    else
-        flash.now[:alert] = 'Update not sucessfull'
-        render :new
-    end
+  def destroy
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+    @comment.destroy
+    redirect_to article_path(@article)
   end
 end
