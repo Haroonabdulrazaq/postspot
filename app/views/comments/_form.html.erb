@@ -1,8 +1,5 @@
-<%= form_for(:comment, url: article_path, method: 'post' ) do |f| %>
-  <div class='field-group'>
-    <p class='control'>
-      <%= f.text_field :name, placeholder: 'Username',class:'input mb-4' %>
-    </p>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <div class='field'>
     <p class='control'>
       <%= f.text_area :body, placeholder: 'Comment', size: "40x5",class:'textarea mb-4' %>
     </p>

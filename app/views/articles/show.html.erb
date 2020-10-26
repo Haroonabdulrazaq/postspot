@@ -72,10 +72,10 @@
   <div class='columns ml-6'>
     <div class='column is-6'>
       <% @article.comments.each do |comment| %>
-      <div class='bg-white'>
-        <strong class='mb-6'><%= current_user.name %></strong>
+      <div class='bg-grey'>
+        <strong class='mb-6'><%= comment.name %></strong>
         <p class='has-text-centered'><%= comment.body %></p>
-      </div>
+      </div> 
       <% end %>
     </div>
     <div class='column is-6'>

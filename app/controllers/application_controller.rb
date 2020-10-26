@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     params.require(:category).permit(:name, :priority)
   end
 
-  def comments_params
+  def comment_params
     params.require(:comment).permit(:name, :body, :article_id)
   end
 
