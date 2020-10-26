@@ -66,11 +66,23 @@
 <%= render 'shared/btnnav'%>
   </div>
 </div>
-<div class='columns ml-6'>
-<div class='column is-5'>
-  <%= render './comments/form' %>
-</div>
-</div>
+<% if current_user %>
+<hr>
+<h3 class='title is-4 has-text-centered'><%= @article.comments.count %> Comments</h3>
+  <div class='columns ml-6'>
+    <div class='column is-6'>
+      <% @article.comments.each do |comment| %>
+      <div class='bg-white'>
+        <strong class='mb-6'><%= current_user.name %></strong>
+        <p class='has-text-centered'><%= comment.body %></p>
+      </div>
+      <% end %>
+    </div>
+    <div class='column is-6'>
+      <%= render './comments/form' %>
+    </div>
+  </div>
+  <%end%>
 </div>
 
     

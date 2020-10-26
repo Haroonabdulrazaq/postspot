@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+    def index
+        @comments = Comment.all.order('created_at DESC')
+    end
+
     def create
         @article = Article.find(params[:article_id])
         @comment = @article.Comment.build(comments_params)

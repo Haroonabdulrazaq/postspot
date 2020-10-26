@@ -1,0 +1,11 @@
+<%= form_for(:comment, url: article_path, method: 'post' ) do |f| %>
+  <div class='field-group'>
+    <p class='control'>
+      <%= f.text_field :name, placeholder: 'Username',class:'input mb-4' %>
+    </p>
+    <p class='control'>
+      <%= f.text_area :body, placeholder: 'Comment', size: "40x5",class:'textarea mb-4' %>
+    </p>
+    <%= f.submit 'Submit', class:'button is-success is-pulled-right' %>
+  </div>
+<% end %>
