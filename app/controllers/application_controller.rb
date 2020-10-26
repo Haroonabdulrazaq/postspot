@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     params.require(:category).permit(:name, :priority)
   end
 
+  def comment_params
+    params.require(:comment).permit(:name, :body, :article_id)
+  end
+
   def log_out
     session.delete(:user_id)
     @current_user = nil

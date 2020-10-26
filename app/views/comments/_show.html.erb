@@ -1,0 +1,14 @@
+<% @article.comments.each do |comment| %>
+  <div class='comment-body mb-4'>
+    <strong class='mb-6'><%= comment.name %></strong>
+    <p class='has-text-centered'><%= comment.body %></p>
+    <span class='orange-color'><%= time_ago_in_words(comment.created_at) %> ago</span>
+    <div class='comment-icon is-pulled-right'>
+    <% if current_user.name == comment.name %>
+      <%= link_to [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <span class="icon"><i class="fa fa-trash-o" arial-hidden="true"></i></span>
+      <% end %>
+    <%end%>
+    </div>
+  </div>
+<% end %>

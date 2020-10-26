@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :articles do
+    resources :comments, except: %i[edit update index]
     member do
       get 'votes'
       get 'downvote'

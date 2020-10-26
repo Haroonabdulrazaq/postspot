@@ -65,8 +65,19 @@
   </nav>
 <%= render 'shared/btnnav'%>
   </div>
-
 </div>
+<% if current_user %>
+<hr>
+<h3 class='title is-4 has-text-centered'><%= @article.comments.count %> Comments</h3>
+  <div class='columns ml-6'>
+    <div class='column is-6'>
+    <%= render './comments/show' %>
+    </div>
+    <div class='column is-6'>
+      <%= render './comments/form' %>
+    </div>
+  </div>
+  <%end%>
 </div>
 
     
