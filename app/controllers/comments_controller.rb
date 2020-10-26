@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     def create
         @article = Article.find(params[:article_id])
         @comment = @article.Comment.build(comments_params)
-        if @comments.save
+        if @comment.save
             flash[:notice] = 'Comments created sucessfully'
             redirect_to article_path
         else
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
             flash[:notice] = 'Updated sucessfully'
             redirect_to article_path
         else
-          flash.now[:alert] = 'Update un sucessfull'
+          flash.now[:alert] = 'Update not sucessfull'
           render :new
         end
     end
