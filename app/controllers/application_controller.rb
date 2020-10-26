@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def comments_params
-    params.require(:comment).permit(:body, :article_id)
+    params.require(:comment).permit(:name, :body, :article_id)
   end
 
   def log_out
