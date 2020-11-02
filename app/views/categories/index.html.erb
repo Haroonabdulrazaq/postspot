@@ -12,7 +12,7 @@
     </div>
   <%end%>
 
-  <div class="categories">
+  <div class="categories ">
     <% categories = Category.includes(:most_recent_article).all%>
     <% categories.each do |category|%>
     <div class="category">
